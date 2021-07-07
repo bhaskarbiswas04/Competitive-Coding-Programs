@@ -1,0 +1,55 @@
+Leet_1 : Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+
+package com.company;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class twoSum_Leet1 {
+
+    public static int[] twoSum(int[] arr, int tar)
+    {
+        int[] result = new int[2];
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+
+        for(int i =0; i<arr.length; i++)
+        {
+            if(map.containsKey(tar - arr[i]))
+            {
+                result[1] = i;
+                result[0] = map.get(tar - arr[i]);  // stores the index of the value.
+                return result;
+            }
+            map.put(arr[i], i);  //Puts the value and the Index in the HashMap.
+        }
+        return result;
+    }
+
+    public static void main(String[] args)
+    {
+
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Enter the size of the array :");
+        int size = in.nextInt();
+
+        int[] array = new int[size];
+
+        System.out.println("Enter the elements of the array :");
+        for(int i =0 ; i< size; i++)
+        {
+            array[i] = in.nextInt();
+        }
+
+        System.out.println("Enter the target Value :");
+        int target = in.nextInt();
+
+//        int[] array = {45, 10, 20, 32, 29, 12};
+//        int target = 57;
+
+        int res[] = twoSum(array, target);
+        System.out.println(res[0] + "," + res[1]);
+    }
+}
