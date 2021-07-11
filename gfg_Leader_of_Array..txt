@@ -1,6 +1,7 @@
 // GeeksforGeeks - Leaders in an Array.
 // Question Link - https://practice.geeksforgeeks.org/problems/leaders-in-an-array-1587115620/1/?track=md-arrays&batchId=144#
 
+// Solution_1 : Brute Force Method.
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -17,7 +18,7 @@ public class Main
 	    System.out.println("Enter the elements of the array : ");
 	    for(int i = 0; i<n; i++)
 	    {
-	        arr[i] = in.nextInt();
+	        arr[i] = in.nextInt(); 
 	    }
 	    
 	    ArrayList<Integer> a = new ArrayList<>();
@@ -47,4 +48,34 @@ public class Main
         
         System.out.println(a);
 	}
+}
+
+
+
+// Solution_2 :
+class Solution{
+    //Function to find the leaders in the array.
+    static ArrayList<Integer> leaders(int arr[], int n){
+        // Your code here
+        ArrayList<Integer> answer = new ArrayList<>();
+        
+        int s = arr.length;
+        
+        answer.add(arr[s-1]);
+        
+        for(int j = n-2; j>=0; j--)
+        {
+            if(arr[j] >= answer.get(answer.size()-1))
+            {
+                answer.add(arr[j]);
+            }
+        }
+        
+        ArrayList<Integer> finalList = new ArrayList<>();
+        for(int i = answer.size()-1; i>=0; i--)
+        {
+            finalList.add(answer.get(i));
+        }
+        return finalList;
+    }
 }
