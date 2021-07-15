@@ -1,0 +1,51 @@
+##--> Rearrange Array Alternately - GFGs
+Link : https://practice.geeksforgeeks.org/problems/-rearrange-array-alternately-1587115620/1/?track=md-arrays&batchId=144
+
+
+package com.company;
+
+import java.util.List;
+import java.util.ArrayList;
+
+class solution
+{
+    public void rearrange(int[] arr)
+    {
+        List<Integer> result = new ArrayList<>();
+        int i, j;
+
+        if(arr.length % 2 == 0)
+        {
+            for(i=0, j=arr.length-1; i<j; i++, j--)
+            {
+                result.add(arr[j]);
+                result.add(arr[i]);
+            }
+
+            System.out.println("The resultant array is : "+ result);
+        }
+        else
+        {
+            int mid = arr.length/2;
+            for(i=0, j=arr.length-1; i<j; i++, j--)
+            {
+                result.add(arr[j]);
+                result.add(arr[i]);
+            }
+
+            result.add(arr[mid]);
+
+            System.out.println("The resultant array is : "+ result);
+        }
+    }
+}
+
+public class RearrangeArray {
+    public static void main(String[] args) {
+
+        int[] array = {5, 10, 15, 20, 25, 30, 35, 40};
+
+        solution obj = new solution();
+        obj.rearrange(array);
+    }
+}
