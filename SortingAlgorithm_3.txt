@@ -1,0 +1,42 @@
+#3-> Selection Sort
+
+class selectionSort
+{
+    public void selection_func(int[] arr)
+    {
+        for(int i = 0; i<arr.length-1; i++)
+        {
+            int min = i;
+            for(int j = i+1; j<arr.length; j++)
+            {
+                if(arr[j] < arr[min])
+                {
+                    min = j;
+                }
+            }
+
+            if(min != i)
+            {
+                int temp = arr[i];
+                arr[i] = arr[min];
+                arr[min] = temp;
+            }
+        }
+
+        System.out.println("The sorted array is :");
+        for(int i =0; i<arr.length; i++)
+        {
+            System.out.println(arr[i] + " ");
+        }
+    }
+}
+
+public class sortingSS{
+    public static void main(String[] args)
+    {
+        int[] array = {8, 4, 1, 5, 9, 2};
+
+        selectionSort obj = new selectionSort();
+        obj.selection_func(array);
+    }
+}
