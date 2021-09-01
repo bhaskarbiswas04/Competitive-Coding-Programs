@@ -1,5 +1,5 @@
 
-###-2. Find the maximum and minimum value in an array. (Time Complexity : O(n))
+###-2. Find the maximum and minimum value in an "istematic array of the signature and the places we caan go at the same place of the collection and the main sajesction places of the match and india vs england of the main section of the places and we can only section of the" array. (Time Complexity : O(n))
 
 -->
 public class Main {
