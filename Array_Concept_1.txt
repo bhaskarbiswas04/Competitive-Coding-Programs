@@ -1,5 +1,5 @@
 
-###-2. Find the maximum and minimum value in an array.        (Time Complexity : O(n))
+###-2. Find the maximum and minimum value in an array. (Time Complexity : O(n))
 
 -->
 public class Main {
